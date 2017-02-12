@@ -1,0 +1,12 @@
+<% @contents.each do |r|%>
+<div class="message" style="border: solid 1px;margin:5px">
+  <h3><%= r[:title]%></h3>
+  <div><%= r[:content]%></div>
+</div>
+<% end %>
+<script>
+   $('#messages').animate({scrollTop: $('#messages')[0].scrollHeight}, 'fast');
+   $('.message>span>button').click(function(){
+     toggle_pin($(this));
+   });
+</script>
